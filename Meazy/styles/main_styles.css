@@ -1,5 +1,7 @@
 .main-inner {
     display: block;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 
@@ -45,6 +47,10 @@
 @media (max-width: 500px) {
     .main {
         margin: 20vw auto 0;
+    }
+
+    .main-inner {
+        gap: 6vw;
     }
 
     .title {

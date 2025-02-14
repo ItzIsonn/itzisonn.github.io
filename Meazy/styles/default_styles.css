@@ -20,6 +20,10 @@ a {
     text-decoration: none;
 }
 
+ul {
+    padding-left: 40px;
+}
+
 
 
 .main {
@@ -27,14 +31,6 @@ a {
     margin: 100px auto 0;
     position: absolute;
     padding-bottom: 30px;
-}
-
-.main-inner {
-    display: flex;
-    gap: 30px;
-    width: fit-content;
-    padding: 0 40px;
-    margin: 0 auto;
 }
 
 
@@ -48,8 +44,7 @@ a {
         margin-top: 4vw;
     }
 
-    .main-inner {
-        gap: 6vw;
-        padding: 0 8vw;
+    ul {
+        padding-left: 8vw;
     }
 }

@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="styles/docs_styles.css">
 
         <script src="scripts/sections_script.js" defer></script>
+        <script src="scripts/pages_script.js" defer></script>
     </head>
 
     <body ontouchstart="">
@@ -37,8 +38,10 @@
         </header>
 
         <div class="main">
-            <div class="main-inner">
-                <aside class="pages">
+            <div class="docs-inner">
+                <p class="toggle-pages-button">Открыть выбор страниц</p>
+
+                <aside class="pages hidden">
                     <p class="pages-title">Начало</p>
                     <div class="pages-buttons">
                         <a class="usage-button">Использование</a>
@@ -48,6 +51,10 @@
                     <div class="pages-buttons">
                         <a class="main-button">Основы</a>
                         <a class="variables-button">Переменные</a>
+                        <a class="if-button">Условия</a>
+                        <a class="for-button">Цикл for</a>
+                        <a class="while-button">Цикл while</a>
+                        <a class="functions-button">Функции</a>
                     </div>
                 </aside>
 
@@ -62,7 +69,7 @@
                             <p>Далее, в зависимости от требований, выполните команду:</p>
                             <ul>
                                 <li>Выполнить код - <code>Meazy.exe run &lt;file_to_run&gt;</code>, где <code>&lt;file_to_run&gt;</code> - файл в формате <code>.mea</code> (либо формат <code>.meac</code>, если это скомпилированный код) с кодом, который вы хотите выполнить</li>
-                                <li>Скомпилировать код - <code>Meazy.exe compile &lt;file_to_compile&gt; &lt;output_file_path&gt;</code>, где <code>&lt;file_to_compile&gt;</code> - файл в формате <code>.mea</code> с кодом, который вы хотите скомпилировать, <code>&lt;output_file_path&gt;</code> - файл с скомпилированным кодом (при необходимости Meazy создаст файл)</li>
+                                <li>Скомпилировать код - <code>Meazy.exe compile &lt;file_to_compile&gt; &lt;output_file_path&gt;</code>, где <code>&lt;file_to_compile&gt;</code> - файл в формате <code>.mea</code> с кодом, который вы хотите скомпилировать, <code>&lt;output_file_path&gt;</code> - файл со скомпилированным кодом (при необходимости Meazy создаст файл)</li>
                                 <li>Декомпилировать код - <code>Meazy.exe decompile &lt;file_to_decompile&gt; &lt;output_file_path&gt;</code>, где <code>&lt;file_to_decompile&gt;</code> - файл в формате <code>.meac</code> с кодом, который вы хотите декомпилировать, <code>&lt;output_file_path&gt;</code> - файл с декомпилированным кодом (при необходимости Meazy создаст файл)</li>
                                 <li>Узнать версию - <code>Meazy.exe version</code></li>
                             </ul>
@@ -107,6 +114,8 @@
                             <li><code>String</code> - строка</li>
                             <li>Названия всех созданных классов</li>
                         </ul>
+
+                        <p>Если после названия типа данных поставить <code>?</code>, то под него будет подходить <code>null</code> значение (по умолчанию нет)</p>
                     </div>
                 </div>
 
@@ -154,14 +163,213 @@
 
                         <div class="small-section">
                             <p>Может использоваться любой арифметический знак:</p>
-                            <div class="code"><span class="variable">NAME</span> = <span class="variable">NAME</span> + <span class="value">VALUE</span><br>
-                                <span class="variable">NAME</span> += VALUE <span class="comment">//То же самое, что и первая строчка</span></div>
+                            <div class="code">
+                                <span class="variable">NAME</span> = <span class="variable">NAME</span> + <span class="value">VALUE</span><br>
+                                <span class="variable">NAME</span> += <span class="value">VALUE</span> <span class="comment">//То же самое, что и первая строчка</span>
+                            </div>
                         </div>
 
                         <div class="small-section">
                             <p>Может использоваться только + или -:</p>
-                            <div class="code"><span class="variable">NAME</span> = <span class="variable">NAME</span> + <span class="number">1</span><br>
-                                <span class="variable">NAME</span>++ <span class="comment">//То же самое, что и первая строчка</span></div>
+                            <div class="code">
+                                <span class="variable">NAME</span> = <span class="variable">NAME</span> + <span class="number">1</span><br>
+                                <span class="variable">NAME</span>++ <span class="comment">//То же самое, что и первая строчка</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="page if-page">
+                    <div class="section">
+                        <p class="info-title">Основное условие</p>
+
+                        <div class="code">
+                            <span class="keyword">if</span> (<span class="value">VALUE</span>) {<br>
+                            <span class="comment" style="white-space: pre">    //Тело условия</span><br>
+                            }
+                        </div>
+
+                        <ul>
+                            <li><code>VALUE</code> - значение типа Boolean</li>
+                            <li><code>Если VALUE == true</code>, то выполнится код, находящийся в теле условия</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Иначе</p>
+
+                        <div class="code">
+                            <span class="keyword">else</span> {<br>
+                            <span class="comment" style="white-space: pre">    //Тело иначе</span><br>
+                            }
+                        </div>
+
+                        <ul>
+                            <li>Перед этой частью обязательно должно стоять условие</li>
+                            <li>Если условие перед этой частью не выполнилось, то выполнится код, находящийся в теле иначе</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Иначе с условием</p>
+
+                        <div class="code">
+                            <span class="keyword">else if</span> (<span class="value">VALUE</span>) {<br>
+                            <span class="comment" style="white-space: pre">    //Тело иначе с условием</span><br>
+                            }
+                        </div>
+
+                        <ul>
+                            <li>Перед этой частью обязательно должно стоять условие</li>
+                            <li><code>VALUE</code> - значение типа boolean</li>
+                            <li>Если условие перед этой частью не выполнилось, а <code>VALUE == true</code>, то выполнится код, находящийся в теле иначе с условием</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Операторы</p>
+
+                        <div class="small-section">
+                            <p>В теле условия можно использовать return</p>
+
+                            <ul>
+                                <li>Кода в теле условия после return быть не должно</li>
+                                <li>Может иметь вид <code>return VALUE</code>, если условие находится внутри функции</li>
+                            </ul>
+                        </div>
+
+                        <p>Если условие находится внутри цикла, то оператор <code>continue</code> перейдет к следующей итерации, а <code>break</code> досрочно завершит выполнение цикла</p>
+                    </div>
+                </div>
+
+
+
+                <div class="page for-page">
+                    <div class="section">
+                        <p class="info-title">Обычный цикл</p>
+
+                        <div class="code">
+                            <span class="keyword">for</span> (<span class="value">INIT</span>, <span class="value">TERMINATION</span>, <span class="value">ASSIGNMENT</span>) {<br>
+                            <span class="comment" style="white-space: pre">    //Тело цикла</span><br>
+                            }
+                        </div>
+
+                        <ul>
+                            <li><code>INIT</code> - создание счётной переменной</li>
+                            <li><code>TERMINATION</code> - значение типа boolean, условие, при котором выполняется цикл</li>
+                            <li><code>ASSIGNMENT</code> - изменение значения переменной</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Цикл, проходящий через все элементы коллекции</p>
+
+                        <div class="code">
+                            <span class="keyword">for</span> (<span class="value">INIT</span> <span class="keyword">in</span> <span class="value">COLLECTION</span>) {<br>
+                            <span class="comment" style="white-space: pre">    //Тело цикла</span><br>
+                            }
+                        </div>
+
+                        <ul>
+                            <li>Цикл будет выполняться до тех пор, пока не пройдет через всю коллекцию</li>
+                            <li><code>INIT</code> - создание переменной, используемой для хранения значения элемента коллекции. Не должна иметь изначального значения</li>
+                            <li><code>COLLECTION</code> - коллекция</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Операторы</p>
+
+                        <div class="small-section">
+                            <p>В теле цикла можно использовать return</p>
+
+                            <ul>
+                                <li>Кода в теле цикла после return быть не должно</li>
+                                <li>Может иметь вид <code>return VALUE</code>, если цикл находится внутри функции</li>
+                            </ul>
+                        </div>
+
+                        <p>Оператор <code>continue</code> перейдет к следующей итерации, а <code>break</code> досрочно завершит выполнение цикла</p>
+                    </div>
+                </div>
+
+
+
+                <div class="page while-page">
+                    <div class="section">
+                        <p class="info-title">Цикл while</p>
+
+                        <div class="code">
+                            <span class="keyword">while</span> (<span class="value">VALUE</span>) {<br>
+                            <span class="comment" style="white-space: pre">    //Тело цикла</span><br>
+                            }
+                        </div>
+
+                        <p><code>VALUE</code> - значение типа boolean, условие, при котором выполняется цикл</p>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Операторы</p>
+
+                        <div class="small-section">
+                            <p>В теле цикла можно использовать return</p>
+
+                            <ul>
+                                <li>Кода в теле цикла после return быть не должно</li>
+                                <li>Может иметь вид <code>return VALUE</code>, если цикл находится внутри функции</li>
+                            </ul>
+                        </div>
+
+                        <p>Оператор <code>continue</code> перейдет к следующей итерации, а <code>break</code> досрочно завершит выполнение цикла</p>
+                    </div>
+                </div>
+
+
+
+                <div class="page functions-page">
+                    <div class="section">
+                        <p class="info-title">Создание</p>
+
+                        <div class="code">
+                            <span class="keyword">function</span> <span class="function">NAME</span>(<span class="value">ARGS</span>):TYPE {<br>
+                            <span class="comment" style="white-space: pre">    //Тело функции</span><br>
+                            }
+                        </div>
+
+                        <ul>
+                            <li>Создавать функции можно только в основном коде и классах</li>
+                            <li><code>NAME</code> - имя функции</li>
+                            <li><code>ARGS</code> - аргументы, которые определяются как переменные без присвоенного значения, перечисляются через запятую и не повторяются именами с другими аргументами. Их значения можно использовать только внутри определяемой функции. Если необходимости в аргументах нет, надо оставить скобочки пустыми</li>
+                            <li><code>:TYPE</code> - тип возвращаемого значения. Если функция не возвращает никакого значения, можно не указывать</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Вызов</p>
+
+                        <div class="code">
+                            NAME(<span class="value">ARGS</span>)
+                        </div>
+
+                        <ul>
+                            <li>Вызываемая функция уже должна существовать</li>
+                            <li>При вызове выполнится код, находящийся в теле функции</li>
+                            <li>Число аргументов и их тип данных должны соответствовать указанным при создании функции</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Return</p>
+
+                        <div class="small-section">
+                            <p>В теле функции можно использовать return</p>
+
+                            <ul>
+                                <li>Кода в теле функции после return быть не должно</li>
+                                <li>Может иметь вид <code>return VALUE</code>, тогда функция вернёт <code>VALUE</code></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
