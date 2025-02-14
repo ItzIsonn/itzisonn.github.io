@@ -1,0 +1,49 @@
+header {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    display: inline-flex;
+    width: 100%;
+}
+
+.nav {
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.nav:hover {
+    border-bottom: solid 2px rgb(112, 112, 112);
+    padding-bottom: 13px;
+}
+
+.nav p {
+    margin: 0;
+    cursor: pointer;
+    width: max-content;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.nav a {
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    margin: 0 10px;
+    width: max-content;
+    font-weight: 700;
+}
+
+
+
+@media (max-width: 500px) {
+    .nav p {
+        font-size: 4vw;
+    }
+
+    .nav a {
+        margin: 0 2vw;
+    }
+}

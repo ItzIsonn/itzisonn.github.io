@@ -1,0 +1,232 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 400;
+
+    src: local("JetBrains Mono"),
+    url("../fonts/JetBrainsMono-Medium.woff2") format("woff2")
+}
+
+.main-inner {
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+    margin: 0;
+    padding: 0 40px;
+}
+
+
+
+.pages {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: fit-content;
+    border: solid rgb(46, 46, 48) 2px;
+    background-color: rgba(46, 46, 48, 0.35);
+}
+
+.pages-title {
+    width: fit-content;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.pages-title.after {
+    margin-top: 20px;
+}
+
+.pages .pages-buttons {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+    margin: 15px 0 0;
+}
+
+.pages-buttons a {
+    color: white;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pages-buttons a:hover {
+    background-color: #333339;
+}
+
+.pages-buttons a.selected {
+    color: white;
+    background-color: #494951;
+}
+
+
+
+.page {
+    max-width: 900px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.page .section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.page .section .small-section {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.page .info-title {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.page p {
+    margin: 0;
+}
+
+.page ul {
+    margin: 0;
+}
+
+
+
+code {
+    margin: 0;
+    font-size: 80%;
+    background-color: rgba(117, 124, 136, 0.2);
+    padding: 3px 5px;
+    line-height: 24px;
+    border-radius: 5px;
+    font-family: "JetBrains Mono", serif;
+}
+
+div.code {
+    margin: 0;
+    font-size: 80%;
+    background-color: rgba(117, 124, 136, 0.2);
+    padding: 10px 12px;
+    border-radius: 10px;
+    width: fit-content;
+    font-family: "JetBrains Mono", serif;
+}
+
+div.code span.keyword {
+    color: #CF8E6D;
+}
+
+div.code span.variable {
+    color: #C77DBB;
+}
+
+div.code span.function {
+    color: #56A8F5;
+}
+
+div.code span.number {
+    color: #2AACB8;
+}
+
+div.code span.string {
+    color: #6AAB73;
+}
+
+div.code span.value {
+    color: #B3AE60;
+}
+
+div.code span.comment {
+    color: #7A7E85;
+}
+
+
+
+@media (max-width: 750px) {
+    .main {
+        margin-top: 20px;
+    }
+
+    .main-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .main {
+        margin-top: 4vw;
+    }
+
+    .main-inner {
+        gap: 6vw;
+        padding: 0 8vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pages {
+        padding: 4vw;
+        border-radius: 2vw;
+        gap: 1.6vw;
+    }
+
+    .pages-title {
+        font-size: 4.4vw;
+    }
+
+    .pages-title.after {
+        margin-top: 4vw;
+    }
+
+    .pages .pages-buttons {
+        gap: 1vw;
+        margin: 3vw 0 0;
+    }
+
+    .pages-buttons a {
+        border-radius: 1vw;
+        padding: 2vw;
+    }
+
+    .page {
+        gap: 5vw;
+    }
+
+    .page .section {
+        gap: 3vw;
+    }
+
+    .page .section .small-section {
+        gap: 1.4vw;
+    }
+
+    .page .info-title {
+        font-size: 5vw;
+    }
+
+    code {
+        padding: 0.6vw 1vw;
+        line-height: 4.8vw;
+        border-radius: 1vw;
+    }
+
+    div.code {
+        padding: 2vw 2.4vw;
+        border-radius: 2vw;
+    }
+}

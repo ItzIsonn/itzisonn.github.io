@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Meazy | Документация</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+
+        <link rel="stylesheet" href="../styles/default_styles.css">
+        <link rel="stylesheet" href="../styles/nav_styles.css">
+        <link rel="stylesheet" href="styles/docs_styles.css">
+
+        <script src="scripts/sections_script.js" defer></script>
+    </head>
+
+    <body ontouchstart="">
+        <header>
+            <div class="nav">
+                <a href="../index.html">
+                    <p>Meazy</p>
+                </a>
+            </div>
+
+            <div style="width: 100%;"></div>
+
+            <div class="nav">
+                <a href="https://github.com/ItzIsonn/Meazy/releases" target="_blank">
+                    <p>Версии</p>
+                </a>
+            </div>
+
+            <div class="nav">
+                <a href="index.html">
+                    <p>Документация</p>
+                </a>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="main-inner">
+                <aside class="pages">
+                    <p class="pages-title">Начало</p>
+                    <div class="pages-buttons">
+                        <a class="usage-button">Использование</a>
+                    </div>
+
+                    <p class="pages-title after">Синтаксис</p>
+                    <div class="pages-buttons">
+                        <a class="main-button">Основы</a>
+                        <a class="variables-button">Переменные</a>
+                    </div>
+                </aside>
+
+
+
+                <div class="page usage-page">
+                    <div class="section">
+                        <p class="info-title">Использование</p>
+                        <p>Скачайте последнюю версию <a href="https://github.com/ItzIsonn/Meazy/releases">Meazy</a> и <a href="https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html">JDK</a> версии 21.0.3 минимум</p>
+                        <p>Откройте в консоли папку, в которой находится установленный файл Meazy-vVERSION.exe, далее упоминаемый как Meazy.exe</p>
+                        <div>
+                            <p>Далее, в зависимости от требований, выполните команду:</p>
+                            <ul>
+                                <li>Выполнить код - <code>Meazy.exe run &lt;file_to_run&gt;</code>, где <code>&lt;file_to_run&gt;</code> - файл в формате <code>.mea</code> (либо формат <code>.meac</code>, если это скомпилированный код) с кодом, который вы хотите выполнить</li>
+                                <li>Скомпилировать код - <code>Meazy.exe compile &lt;file_to_compile&gt; &lt;output_file_path&gt;</code>, где <code>&lt;file_to_compile&gt;</code> - файл в формате <code>.mea</code> с кодом, который вы хотите скомпилировать, <code>&lt;output_file_path&gt;</code> - файл с скомпилированным кодом (при необходимости Meazy создаст файл)</li>
+                                <li>Декомпилировать код - <code>Meazy.exe decompile &lt;file_to_decompile&gt; &lt;output_file_path&gt;</code>, где <code>&lt;file_to_decompile&gt;</code> - файл в формате <code>.meac</code> с кодом, который вы хотите декомпилировать, <code>&lt;output_file_path&gt;</code> - файл с декомпилированным кодом (при необходимости Meazy создаст файл)</li>
+                                <li>Узнать версию - <code>Meazy.exe version</code></li>
+                            </ul>
+                        </div>
+                        <p>Аддоны также могут добавлять свои команды</p>
+                    </div>
+                </div>
+
+
+
+                <div class="page main-page">
+                    <div class="section">
+                        <p class="info-title">Код</p>
+                        <ul>
+                            <li>В основном коде можно только создавать переменные, функции и классы</li>
+                            <li>Каждое новое выражение (создание переменной, вызов функции, ...) начинается с новой строки</li>
+                            <li>Все имена могут содержать только английские буквы, цифры (не должны стоять первыми) и нижние подчеркивания</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title">Выполнение кода</p>
+                        <ul>
+                            <li>Код выполняется сверху вниз</li>
+                            <li>При запуске кода вызывается функция <code>main()</code>, которая должна быть создана внутри него. Без неё программа не несёт смысла</li>
+                        </ul>
+
+                        <div class="code">
+                            <span class="keyword">function</span> <span class="function">main</span>() {<br>
+                            <span class="comment" style="white-space: pre">    //Тело функции</span><br>
+                            }<br>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title">Типы данных</p>
+                        <ul>
+                            <li><code>Any</code> - любое возможное</li>
+                            <li><code>Int</code> - целые числа</li>
+                            <li><code>Float</code> - дробные числа</li>
+                            <li><code>Boolean</code> - логическое значение</li>
+                            <li><code>String</code> - строка</li>
+                            <li>Названия всех созданных классов</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="page variables-page">
+                    <div class="section">
+                        <p class="info-title">Создание</p>
+                        <ul>
+                            <li>Переменные можно создавать в любом месте, но их имя должно быть уникально</li>
+                            <li>Переменные, созданные внутри какого-либо тела, могут использоваться только внутри него и его наследников</li>
+                            <li>Чтобы получить значение переменной, надо просто написать её имя</li>
+                            <li><code>:TYPE</code> - тип данных переменной, опционально. Если указан, значение должно всегда подходить под него</li>
+                        </ul>
+
+                        <div class="small-section">
+                            <p>Создание переменной со значением:</p>
+                            <div class="code"><span class="keyword">var</span> <span class="variable">NAME</span>:TYPE = <span class="value">VALUE</span></div>
+                        </div>
+
+                        <div class="small-section">
+                            <p>Создание переменной без значения:</p>
+                            <div class="code"><span class="keyword">var</span> <span class="variable">NAME</span>:TYPE</div>
+                        </div>
+
+                        <div class="small-section">
+                            <p>Создание переменной с постоянным значением:</p>
+                            <div class="code"><span class="keyword">val</span> <span class="variable">NAME</span>:TYPE = <span class="value">VALUE</span></div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Переопределение</p>
+                        <ul>
+                            <li>Переменная с таким именем уже должна существовать</li>
+                            <li>Значение у неизменяемой переменной не может быть переопределено</li>
+                            <li>Новое значение должно подходить под тип данных переменной</li>
+                        </ul>
+
+                        <div class="code"><span class="variable">NAME</span> = VALUE</div>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Сокращенная запись</p>
+
+                        <div class="small-section">
+                            <p>Может использоваться любой арифметический знак:</p>
+                            <div class="code"><span class="variable">NAME</span> = <span class="variable">NAME</span> + <span class="value">VALUE</span><br>
+                                <span class="variable">NAME</span> += VALUE <span class="comment">//То же самое, что и первая строчка</span></div>
+                        </div>
+
+                        <div class="small-section">
+                            <p>Может использоваться только + или -:</p>
+                            <div class="code"><span class="variable">NAME</span> = <span class="variable">NAME</span> + <span class="number">1</span><br>
+                                <span class="variable">NAME</span>++ <span class="comment">//То же самое, что и первая строчка</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

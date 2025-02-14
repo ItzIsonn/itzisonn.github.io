@@ -1,0 +1,33 @@
+html {
+    font-family: "Poppins",BlinkMacSystemFont,-apple-system,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: white;
+    background-color: #19191c;
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+p {
+    cursor: default;
+    margin: 0;
+}
+
+.main {
+    width: fit-content;
+    margin: 100px auto 0;
+}
+
+a {
+    color: #55b8ff;
+    text-decoration: none;
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 3.2vw;
+    }
+}
