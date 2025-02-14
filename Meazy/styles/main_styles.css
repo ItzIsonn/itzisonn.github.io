@@ -1,3 +1,9 @@
+.main-inner {
+    display: block;
+}
+
+
+
 .title-box {
     margin: 0;
     display: flex;
@@ -42,6 +48,7 @@
     }
 
     .title {
+        font-size: 8vw;
         margin: 0 0 2vw;
     }
 
