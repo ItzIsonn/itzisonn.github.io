@@ -55,6 +55,16 @@
                         <a class="for-button">Цикл for</a>
                         <a class="while-button">Цикл while</a>
                         <a class="functions-button">Функции</a>
+                        <a class="classes-button">Классы</a>
+                        <a class="constructors-button">Конструкторы</a>
+                        <a class="modifiers-button">Модификаторы</a>
+                        <a class="code-examples-button">Примеры кода</a>
+                    </div>
+
+                    <p class="pages-title after">Ошибки</p>
+                    <div class="pages-buttons">
+                        <a class="known-issues-button">Известные</a>
+                        <a class="read-issues-button">Чтение</a>
                     </div>
                 </aside>
 
@@ -227,21 +237,6 @@
                             <li>Если условие перед этой частью не выполнилось, а <code>VALUE == true</code>, то выполнится код, находящийся в теле иначе с условием</li>
                         </ul>
                     </div>
-
-                    <div class="section">
-                        <p class="info-title after">Операторы</p>
-
-                        <div class="small-section">
-                            <p>В теле условия можно использовать return</p>
-
-                            <ul>
-                                <li>Кода в теле условия после return быть не должно</li>
-                                <li>Может иметь вид <code>return VALUE</code>, если условие находится внутри функции</li>
-                            </ul>
-                        </div>
-
-                        <p>Если условие находится внутри цикла, то оператор <code>continue</code> перейдет к следующей итерации, а <code>break</code> досрочно завершит выполнение цикла</p>
-                    </div>
                 </div>
 
 
@@ -282,16 +277,11 @@
                     <div class="section">
                         <p class="info-title after">Операторы</p>
 
-                        <div class="small-section">
-                            <p>В теле цикла можно использовать return</p>
-
-                            <ul>
-                                <li>Кода в теле цикла после return быть не должно</li>
-                                <li>Может иметь вид <code>return VALUE</code>, если цикл находится внутри функции</li>
-                            </ul>
-                        </div>
-
-                        <p>Оператор <code>continue</code> перейдет к следующей итерации, а <code>break</code> досрочно завершит выполнение цикла</p>
+                        <p>В теле цикла и в телах его детей (if, for, while) можно использовать следующие операторы:</p>
+                        <ul>
+                            <li><code>continue</code> - переход к следующей итерации</li>
+                            <li><code>break</code> - досрочное завершение выполнение цикла</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -313,16 +303,11 @@
                     <div class="section">
                         <p class="info-title after">Операторы</p>
 
-                        <div class="small-section">
-                            <p>В теле цикла можно использовать return</p>
-
-                            <ul>
-                                <li>Кода в теле цикла после return быть не должно</li>
-                                <li>Может иметь вид <code>return VALUE</code>, если цикл находится внутри функции</li>
-                            </ul>
-                        </div>
-
-                        <p>Оператор <code>continue</code> перейдет к следующей итерации, а <code>break</code> досрочно завершит выполнение цикла</p>
+                        <p>В теле цикла и в телах его детей (if, for, while) можно использовать следующие операторы:</p>
+                        <ul>
+                            <li><code>continue</code> - переход к следующей итерации</li>
+                            <li><code>break</code> - досрочное завершение выполнение цикла</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -363,14 +348,199 @@
                     <div class="section">
                         <p class="info-title after">Return</p>
 
-                        <div class="small-section">
-                            <p>В теле функции можно использовать return</p>
+                        <p>В теле функции и в телах её детей (if, for, while) можно использовать return</p>
+                        <ul>
+                            <li>Кода в теле функции после return быть не должно</li>
+                            <li>Может иметь вид <code>return VALUE</code>, тогда функция вернёт <code>VALUE</code></li>
+                        </ul>
+                    </div>
+                </div>
 
+
+
+                <div class="page classes-page">
+                    <div class="section">
+                        <p class="info-title">Создание</p>
+
+                        <div class="code">
+                            <span class="keyword">class</span> NAME {<br>
+                            <span class="comment" style="white-space: pre">    //Тело класса</span><br>
+                            }
+                        </div>
+
+                        <ul>
+                            <li>Создавать классы можно только в основном коде</li>
+                            <li><code>NAME</code> - имя класса</li>
+                            <li>Внутри тела можно объявлять только переменные, функции и конструкторы</li>
+                            <li>Переменные внутри класса могут быть константами без значения, но должны обязательно быть проинициализированы в конструкторе</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Создание экземпляра</p>
+
+                        <div class="code">
+                            <span class="keyword">new</span> NAME(<span class="value">ARGS</span>)
+                        </div>
+
+                        <div class="small-section">
+                            <p>При создании экземпляра вызывается конструктор с подходящими аргументами</p>
                             <ul>
-                                <li>Кода в теле функции после return быть не должно</li>
-                                <li>Может иметь вид <code>return VALUE</code>, тогда функция вернёт <code>VALUE</code></li>
+                                <li>Вызываемый конструктор уже должен существовать</li>
+                                <li>При вызове создаётся новый экземпляр класса, значения которого уникальны только для него самого</li>
+                                <li>Если у класса нет ни одного конструктора, будет вызван пустой по умолчанию</li>
                             </ul>
                         </div>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title after">Ключевое слово this</p>
+
+                        <p><code>this</code> будет возвращать экземпляр класса, в котором сейчас выполняется код</p>
+
+                        <ul>
+                            <li>Ключевое слово <code>this</code> можно использовать только внутри конструкторов и не-<code>shared</code> функциях</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="page constructors-page">
+                    <div class="section">
+                        <p class="info-title">Конструкторы</p>
+
+                        <div class="code">
+                            <span class="keyword">constructor</span>(<span class="value">ARGS</span>) {<br>
+                            <span class="comment" style="white-space: pre">    //Тело конструктора</span><br>
+                            }
+                        </div>
+
+                        <ul>
+                            <li>Создавать конструкторы можно только внутри класса</li>
+                            <li><code>ARGS</code> - аргументы, которые определяются как переменные без присвоенного значения, перечисляются через запятую и не повторяются именами с другими аргументами. Их значения можно использовать только внутри определяемого конструктора. Если необходимости в аргументах нет, надо оставить скобочки пустыми</li>
+                            <li>После выполнения тела конструктора не должно остаться ни одной константы без значения</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="page modifiers-page">
+                    <div class="section">
+                        <p class="info-title">Модификаторы</p>
+
+                        <p>Переменные, функции, классы и конструкторы могут иметь модификаторы, которые будут изменять их поведение</p>
+
+                        <div class="small-section">
+                            <p>Созданные модификаторы:</p>
+                            <ul>
+                                <li><code>private</code> - можно использовать у переменных, функциях и конструкторах, созданных внутри класса - ограничивает доступ только изнутри класса</li>
+                                <li><code>shared</code> - можно использовать у переменных и функциях, созданных внутри класса - делает цель общей среди всех экземпляров класса</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="page code-examples-page">
+                    <div class="section">
+                        <p class="info-title">Количество слов</p>
+
+                        <div class="code">
+                            <span class="keyword">function</span> <span class="function">main</span>() {<br>
+                            <span style="white-space: pre">    <span class="keyword">val</span> <span class="variable">string</span> = Input.readLine()</span><br>
+                            <span style="white-space: pre">    <span class="keyword">var</span> <span class="variable">ans</span>:Int = <span class="number">0</span></span><br>
+                            <span style="white-space: pre">    <span class="keyword">var</span> <span class="variable">isWaitingNewWord</span>:Boolean = <span class="keyword">true</span></span><br>
+                            <br>
+                            <span style="white-space: pre">    <span class="keyword">for</span> (<span class="keyword">var</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> < <span class="variable">string</span>.length(); <span class="variable">i</span>++) {</span><br>
+                            <span style="white-space: pre">        <span class="keyword">var</span> <span class="variable">char</span> = <span class="variable">string</span>.getCharAt(<span class="variable">i</span>)</span><br>
+                            <br>
+                            <span style="white-space: pre">        <span class="keyword">if</span> (<span class="variable">char</span> != <span class="string">" "</span> && <span class="variable">isWaitingNewWord</span>) {</span><br>
+                            <span style="white-space: pre">            <span class="variable">ans</span>++</span><br>
+                            <span style="white-space: pre">            <span class="variable">isWaitingNewWord</span> = <span class="keyword">false</span></span><br>
+                            <span style="white-space: pre">        }</span><br>
+                            <br>
+                            <span style="white-space: pre">        <span class="keyword">if</span> (<span class="variable">char</span> == <span class="string">" "</span>) {</span><br>
+                            <span style="white-space: pre">            <span class="variable">isWaitingNewWord</span> = <span class="keyword">true</span></span><br>
+                            <span style="white-space: pre">        }</span><br>
+                            <span style="white-space: pre">    }</span><br>
+                            <br>
+                            <span style="white-space: pre">    println(<span class="variable">ans</span>)</span><br>
+                            }
+                        </div>
+
+                        <p>или</p>
+
+                        <div class="code">
+                            <span class="keyword">function</span> <span class="function">main</span>() {<br>
+                            <span style="white-space: pre">    println(Input.readLine().split(<span class="string">" "</span>).size())</span><br>
+                            }
+                        </div>
+
+                        <div class="small-section">
+                            <ul>
+                                <li><b>Ввод:</b> Лучший язык программирования</li>
+                                <li><b>Вывод:</b> 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title">Факториал</p>
+
+                        <div class="code">
+                            <span class="keyword">function</span> <span class="function">main</span>() {<br>
+                            <span style="white-space: pre">    println(factorial(Input.readInt()))</span><br>
+                            }<br>
+                            <br>
+                            <span class="keyword">function</span> <span class="function">factorial</span>(<span class="keyword">var</span> <span class="variable">a</span>:Int):Int {<br>
+                            <span style="white-space: pre">    <span class="keyword">if</span> (<span class="variable">a</span> > <span class="number">1</span>) {</span><br>
+                            <span style="white-space: pre">        <span class="keyword">return</span> factorial(<span class="variable">a</span> - <span class="number">1</span>) * <span class="variable">a</span></span><br>
+                            <span style="white-space: pre">    }</span><br>
+                            <span style="white-space: pre">    <span class="keyword">return</span> <span class="number">1</span></span><br>
+                            }
+                        </div>
+
+                        <p>или</p>
+
+                        <div class="code">
+                            <span class="keyword">function</span> <span class="function">main</span>() {<br>
+                            <span style="white-space: pre">    println(Math.factorial(Input.readInt()))</span><br>
+                            }
+                        </div>
+
+                        <div class="small-section">
+                            <ul>
+                                <li><b>Ввод:</b> 5</li>
+                                <li><b>Вывод:</b> 120</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="page known-issues-page">
+                    <div class="section">
+                        <p class="info-title">Уже известные ошибки</p>
+
+                        <p>Нет :)</p>
+                    </div>
+                </div>
+
+
+
+                <div class="page read-issues-page">
+                    <div class="section">
+                        <p class="info-title">Чтение ошибок</p>
+
+                        <ul>
+                            <li>Если ошибка возникла при парсинге кода, будет указан номер строки</li>
+                            <li>Если ошибка произошла во время выполнения кода, будет просто написано, что пошло не так</li>
+                            <li>Но если ошибка не имеет логики, то надо обязательно <a href="https://github.com/ItzIsonn/Meazy/issues">сообщить о ней</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

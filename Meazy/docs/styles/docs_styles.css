@@ -41,13 +41,13 @@
 
 .pages-title {
     width: fit-content;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     margin: 0 auto;
 }
 
 .pages-title.after {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .pages .pages-buttons {
@@ -63,7 +63,8 @@
     color: white;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0);
-    padding: 10px;
+    padding: 8px;
+    font-size: 14px;
     text-decoration: none;
     cursor: pointer;
 }
@@ -218,11 +219,11 @@ div.code span.comment {
     }
 
     .pages-title {
-        font-size: 4.4vw;
+        font-size: 3.6vw;
     }
 
     .pages-title.after {
-        margin-top: 4vw;
+        margin-top: 3vw;
     }
 
     .pages .pages-buttons {
@@ -232,7 +233,8 @@ div.code span.comment {
 
     .pages-buttons a {
         border-radius: 1vw;
-        padding: 2vw;
+        padding: 1.6vw;
+        font-size: 2.8vw;
     }
 
     .page {
