@@ -66,6 +66,13 @@
                         <a class="known-issues-button">Известные</a>
                         <a class="read-issues-button">Чтение</a>
                     </div>
+
+                    <p class="pages-title addons-title after">Аддоны</p>
+                    <div class="pages-buttons addons-buttons">
+                        <a class="addons-start-button">Начало</a>
+                        <a class="registries-button">Registries</a>
+                        <a class="command-creation-button">Создание команды</a>
+                    </div>
                 </aside>
 
 
@@ -75,16 +82,23 @@
                         <p class="info-title">Использование</p>
                         <p>Скачайте последнюю версию <a href="https://github.com/ItzIsonn/Meazy/releases">Meazy</a> и <a href="https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html">JDK</a> версии 21.0.3 минимум</p>
                         <p>Откройте в консоли папку, в которой находится установленный файл Meazy-vVERSION.exe, далее упоминаемый как Meazy.exe</p>
-                        <div>
+                        <div class="small-section">
                             <p>Далее, в зависимости от требований, выполните команду:</p>
                             <ul>
-                                <li>Выполнить код - <code>Meazy.exe run &lt;file_to_run&gt;</code>, где <code>&lt;file_to_run&gt;</code> - файл в формате <code>.mea</code> (либо формат <code>.meac</code>, если это скомпилированный код) с кодом, который вы хотите выполнить</li>
-                                <li>Скомпилировать код - <code>Meazy.exe compile &lt;file_to_compile&gt; &lt;output_file_path&gt;</code>, где <code>&lt;file_to_compile&gt;</code> - файл в формате <code>.mea</code> с кодом, который вы хотите скомпилировать, <code>&lt;output_file_path&gt;</code> - файл со скомпилированным кодом (при необходимости Meazy создаст файл)</li>
-                                <li>Декомпилировать код - <code>Meazy.exe decompile &lt;file_to_decompile&gt; &lt;output_file_path&gt;</code>, где <code>&lt;file_to_decompile&gt;</code> - файл в формате <code>.meac</code> с кодом, который вы хотите декомпилировать, <code>&lt;output_file_path&gt;</code> - файл с декомпилированным кодом (при необходимости Meazy создаст файл)</li>
+                                <li>Выполнить код - <code>Meazy.exe run &lt;file_to_run&gt;</code>, где <code>&lt;file_to_run&gt;</code> -
+                                    файл в формате <code>.mea</code> (либо формат <code>.meac</code>, если это скомпилированный код) с кодом, который вы хотите выполнить</li>
+                                <li>Скомпилировать код - <code>Meazy.exe compile &lt;file_to_compile&gt; &lt;output_file_path&gt;</code>,
+                                    где <code>&lt;file_to_compile&gt;</code> - файл в формате <code>.mea</code> с кодом, который вы хотите скомпилировать,
+                                    <code>&lt;output_file_path&gt;</code> - файл со скомпилированным кодом (при необходимости Meazy создаст файл)</li>
+                                <li>Декомпилировать код - <code>Meazy.exe decompile &lt;file_to_decompile&gt; &lt;output_file_path&gt;</code>,
+                                    где <code>&lt;file_to_decompile&gt;</code> - файл в формате <code>.meac</code> с кодом, который вы хотите декомпилировать,
+                                    <code>&lt;output_file_path&gt;</code> - файл с декомпилированным кодом (при необходимости Meazy создаст файл)</li>
                                 <li>Узнать версию - <code>Meazy.exe version</code></li>
                             </ul>
+                            <p>Аддоны также могут добавлять свои команды</p>
                         </div>
-                        <p>Аддоны также могут добавлять свои команды</p>
+
+                        <p>Чтобы использовать аддоны, переместите их в папку <code>addons</code>, созданную при первом запуске Meazy</p>
                     </div>
                 </div>
 
@@ -326,7 +340,10 @@
                         <ul>
                             <li>Создавать функции можно только в основном коде и классах</li>
                             <li><code>NAME</code> - имя функции</li>
-                            <li><code>ARGS</code> - аргументы, которые определяются как переменные без присвоенного значения, перечисляются через запятую и не повторяются именами с другими аргументами. Их значения можно использовать только внутри определяемой функции. Если необходимости в аргументах нет, надо оставить скобочки пустыми</li>
+                            <li><code>ARGS</code> - аргументы, которые определяются как переменные без присвоенного значения,
+                                перечисляются через запятую и не повторяются именами с другими аргументами.
+                                Их значения можно использовать только внутри определяемой функции.
+                                Если необходимости в аргументах нет, надо оставить скобочки пустыми</li>
                             <li><code>:TYPE</code> - тип возвращаемого значения. Если функция не возвращает никакого значения, можно не указывать</li>
                         </ul>
                     </div>
@@ -418,7 +435,10 @@
 
                         <ul>
                             <li>Создавать конструкторы можно только внутри класса</li>
-                            <li><code>ARGS</code> - аргументы, которые определяются как переменные без присвоенного значения, перечисляются через запятую и не повторяются именами с другими аргументами. Их значения можно использовать только внутри определяемого конструктора. Если необходимости в аргументах нет, надо оставить скобочки пустыми</li>
+                            <li><code>ARGS</code> - аргументы, которые определяются как переменные без присвоенного значения,
+                                перечисляются через запятую и не повторяются именами с другими аргументами.
+                                Их значения можно использовать только внутри определяемого конструктора.
+                                Если необходимости в аргументах нет, надо оставить скобочки пустыми</li>
                             <li>После выполнения тела конструктора не должно остаться ни одной константы без значения</li>
                         </ul>
                     </div>
@@ -454,7 +474,8 @@
                             <span style="white-space: pre">    <span class="keyword">var</span> <span class="variable">ans</span>:Int = <span class="number">0</span></span><br>
                             <span style="white-space: pre">    <span class="keyword">var</span> <span class="variable">isWaitingNewWord</span>:Boolean = <span class="keyword">true</span></span><br>
                             <br>
-                            <span style="white-space: pre">    <span class="keyword">for</span> (<span class="keyword">var</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> < <span class="variable">string</span>.length(); <span class="variable">i</span>++) {</span><br>
+                            <span style="white-space: pre">    <span class="keyword">for</span> (<span class="keyword">var</span> <span class="variable">i</span> = <span class="number">0</span>;
+                                <span class="variable">i</span> < <span class="variable">string</span>.length(); <span class="variable">i</span>++) {</span><br>
                             <span style="white-space: pre">        <span class="keyword">var</span> <span class="variable">char</span> = <span class="variable">string</span>.getCharAt(<span class="variable">i</span>)</span><br>
                             <br>
                             <span style="white-space: pre">        <span class="keyword">if</span> (<span class="variable">char</span> != <span class="string">" "</span> && <span class="variable">isWaitingNewWord</span>) {</span><br>
@@ -541,6 +562,139 @@
                             <li>Если ошибка произошла во время выполнения кода, будет просто написано, что пошло не так</li>
                             <li>Но если ошибка не имеет логики, то надо обязательно <a href="https://github.com/ItzIsonn/Meazy/issues">сообщить о ней</a></li>
                         </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="page addons-start-page">
+                    <div class="section">
+                        <p class="info-title">Создание проекта</p>
+
+                        <p>Так как Meazy написан на Java, аддоны тоже должны использовать этот язык</p>
+                        <p>Скачайте версию Meazy и импортируйте её в проект как jar-файл</p>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title">Данные аддона</p>
+
+                        <div class="small-section">
+                            <p>Создайте файл <code>addon.json</code> в папке <code>resources</code> и добавьте в него следующее содержимое:</p>
+
+                            <div class="code">
+                                {<br>
+                                <span style="white-space: pre">    </span><span class="string">"id"</span>: <span class="string">"ADDON_ID"</span>,<br>
+                                <span style="white-space: pre">    </span><span class="string">"version"</span>: <span class="string">"VERSION"</span>,<br>
+                                <span style="white-space: pre">    </span><span class="string">"main"</span>: <span class="string">"MAIN_CLASS"</span><br>
+                                }
+                            </div>
+
+                            <p>Замените <code>ADDON_ID</code> на айди своего аддона, <code>VERSION</code> на версию, а <code>MAIN_CLASS</code> на путь к главному классу аддона</p>
+                        </div>
+
+                        <div class="small-section">
+                            <p>Список всех возможных данных:</p>
+                            <ul>
+                                <li><code>id</code> - айди аддона (обязательно)</li>
+                                <li><code>version</code> - версия аддона (обязательно)</li>
+                                <li><code>main</code> - главный класс аддона (обязательно)</li>
+                                <li><code>description</code> - описание аддона</li>
+                                <li><code>author</code> - автор аддона</li>
+                                <li><code>authors</code> - авторы аддона (если больше двух и не указан <code>author</code>)</li>
+                                <li><code>depend</code> - аддоны, которые должны обязательно быть, чтобы этот аддон работал.
+                                    Аддон загрузится только после того, как все аддоны из списка будут загружены</li>
+                                <li><code>softDepend</code> - аддоны, после которых загрузится этот аддон</li>
+                                <li><code>loadBefore</code> - аддоны, перед которыми загрузится этот аддон</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title">Главный класс</p>
+
+                        <p>До этого вы указали путь к главному классу аддона в файле <code>addon.json</code></p>
+                        <p>Теперь, если этот класс не был создан, создайте его. Обязательно сделайте, чтобы он наследовал класс
+                            <code><a href="https://github.com/ItzIsonn/Meazy/blob/master/src/main/java/me/itzisonn_/meazy/addons/Addon.java" target="_blank">me.itzisonn_.meazy.addons.Addon</a></code></p>
+                        <p>Переопределите метод <code>onInitialize()</code>. Он будет вызываться, когда аддон запускается. Теперь можно приступать к разработке аддона</p>
+                    </div>
+                </div>
+
+
+
+                <div class="page registries-page">
+                    <div class="section">
+                        <p class="info-title">Registries</p>
+
+                        <p>Meazy работает на системе Registries, который даёт возможность регистрировать новые команды, типы токенов, модификаторы и т.д.</p>
+                        <p>Существует класс <code><a href="https://github.com/ItzIsonn/Meazy/blob/master/src/main/java/me/itzisonn_/meazy/registry/Registries.java" target="_blank">Registries</a></code>,
+                            в котором содержатся все <code>Registry</code>, используемые Meazy</p>
+                        <p>Основной метод класса <code><a href="https://github.com/ItzIsonn/Meazy/blob/master/src/main/java/me/itzisonn_/meazy/registry/Registry.java" target="_blank">Registry</a></code> -
+                            <code>register(RegistryIdentifier identifier, T value, boolean overridable)</code>,
+                            с помощью которого можно зарегистрировать новое вхождение</p>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title">RegistryIdentifier</p>
+
+                        <p><code><a href="https://github.com/ItzIsonn/Meazy/blob/master/src/main/java/me/itzisonn_/meazy/registry/RegistryIdentifier.java" target="_blank">RegistryIdentifier</a></code> -
+                            уникальный айди вхождения. Чтобы его создать, надо вызвать
+                            метод <code>RegistryIdentifier#of(String namespace, String id)</code>, в котором:</p>
+                        <ul>
+                            <li><code>namespace</code> - айди вашего аддона</li>
+                            <li><code>id</code> - айди самого вхождения</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="page command-creation-page">
+                    <div class="section">
+                        <p class="info-title">Создание команды</p>
+
+                        <div class="small-section">
+                            <p>Чтобы создать команду, необходимо инициализировать абстрактный класс
+                                <code><a href="https://github.com/ItzIsonn/Meazy/blob/master/src/main/java/me/itzisonn_/meazy/command/Command.java" target="_blank">me.itzisonn_.meazy.command.Command</a></code></p>
+                            <div class="code">
+                                new Command(List.of("name")) {<br>
+                                <span style="white-space: pre">    </span>@Override<br>
+                                <span style="white-space: pre">    </span>public String execute(String[] args) {<br>
+                                <span style="white-space: pre">        </span>MeazyMain.LOGGER.log(Level.INFO, "Hello, {}", args[0]);<br>
+                                <span style="white-space: pre">        </span>return null;<br>
+                                <span style="white-space: pre">    </span>}<br>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="small-section">
+                            <p>В этом примере:</p>
+                            <ul>
+                                <li>Команда требует один аргумент - имя. Выводит в консоль строку 'Hello, ИМЯ'</li>
+                                <li><code>List.of("name")</code> - список аргументов, которые будут показываться в консоли при неправильно введённой команде</li>
+                                <li>Команда возвращает <code>null</code>, так как она уже выводит что-то в консоль. Если надо, чтобы строка вывелась
+                                    вместе с информацией про длительность загрузки - верните её через <code>return</code></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <p class="info-title">Регистрация команды</p>
+
+                        <div class="small-section">
+                            <p>Уже созданную команду можно зарегистрировать:</p>
+                            <div class="code">
+                                Registries.COMMANDS.register(RegistryIdentifier.of(NAMESPACE, ID), COMMAND);
+                            </div>
+                        </div>
+
+                        <div class="small-section">
+                            <p>Не забудьте заменить:</p>
+                            <ul>
+                                <li><code>NAMESPACE</code> - айди вашего аддона</li>
+                                <li><code>ID</code> - айди команды, по которому она будет вызываться</li>
+                                <li><code>COMMAND</code> - ваша команда</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
