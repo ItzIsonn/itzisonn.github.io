@@ -470,25 +470,25 @@
 
                         <div class="code">
                             <span class="keyword">function</span> <span class="function">main</span>() {<br>
-                            <span style="white-space: pre">    <span class="keyword">val</span> <span class="variable">string</span> = Input.readLine()</span><br>
-                            <span style="white-space: pre">    <span class="keyword">var</span> <span class="variable">ans</span>:Int = <span class="number">0</span></span><br>
-                            <span style="white-space: pre">    <span class="keyword">var</span> <span class="variable">isWaitingNewWord</span>:Boolean = <span class="keyword">true</span></span><br>
+                            <span style="white-space: pre">    </span><span class="keyword">val</span> <span class="variable">string</span> = Input.readLine()<br>
+                            <span style="white-space: pre">    </span><span class="keyword">var</span> <span class="variable">ans</span>:Int = <span class="number">0</span><br>
+                            <span style="white-space: pre">    </span><span class="keyword">var</span> <span class="variable">isWaitingNewWord</span>:Boolean = <span class="keyword">true</span><br>
                             <br>
-                            <span style="white-space: pre">    <span class="keyword">for</span> (<span class="keyword">var</span> <span class="variable">i</span> = <span class="number">0</span>;
-                                <span class="variable">i</span> < <span class="variable">string</span>.length(); <span class="variable">i</span>++) {</span><br>
-                            <span style="white-space: pre">        <span class="keyword">var</span> <span class="variable">char</span> = <span class="variable">string</span>.getCharAt(<span class="variable">i</span>)</span><br>
+                            <span style="white-space: pre">    </span><span class="keyword">for</span> (<span class="keyword">var</span> <span class="variable">i</span> = <span class="number">0</span>;
+                                <span class="variable">i</span> < <span class="variable">string</span>.length(); <span class="variable">i</span>++) {<br>
+                            <span style="white-space: pre">        </span><span class="keyword">var</span> <span class="variable">char</span> = <span class="variable">string</span>.getCharAt(<span class="variable">i</span>)<br>
                             <br>
-                            <span style="white-space: pre">        <span class="keyword">if</span> (<span class="variable">char</span> != <span class="string">" "</span> && <span class="variable">isWaitingNewWord</span>) {</span><br>
-                            <span style="white-space: pre">            <span class="variable">ans</span>++</span><br>
-                            <span style="white-space: pre">            <span class="variable">isWaitingNewWord</span> = <span class="keyword">false</span></span><br>
-                            <span style="white-space: pre">        }</span><br>
+                            <span style="white-space: pre">        </span><span class="keyword">if</span> (<span class="variable">char</span> != <span class="string">" "</span> && <span class="variable">isWaitingNewWord</span>) {<br>
+                            <span style="white-space: pre">            </span><span class="variable">ans</span>++<br>
+                            <span style="white-space: pre">            </span><span class="variable">isWaitingNewWord</span> = <span class="keyword">false</span><br>
+                            <span style="white-space: pre">        </span>}<br>
                             <br>
-                            <span style="white-space: pre">        <span class="keyword">if</span> (<span class="variable">char</span> == <span class="string">" "</span>) {</span><br>
-                            <span style="white-space: pre">            <span class="variable">isWaitingNewWord</span> = <span class="keyword">true</span></span><br>
-                            <span style="white-space: pre">        }</span><br>
-                            <span style="white-space: pre">    }</span><br>
+                            <span style="white-space: pre">        </span><span class="keyword">if</span> (<span class="variable">char</span> == <span class="string">" "</span>) {<br>
+                            <span style="white-space: pre">            </span><span class="variable">isWaitingNewWord</span> = <span class="keyword">true</span><br>
+                            <span style="white-space: pre">        </span>}<br>
+                            <span style="white-space: pre">    </span>}<br>
                             <br>
-                            <span style="white-space: pre">    println(<span class="variable">ans</span>)</span><br>
+                            <span style="white-space: pre">    </span>println(<span class="variable">ans</span>)<br>
                             }
                         </div>
 
@@ -496,7 +496,7 @@
 
                         <div class="code">
                             <span class="keyword">function</span> <span class="function">main</span>() {<br>
-                            <span style="white-space: pre">    println(Input.readLine().split(<span class="string">" "</span>).size())</span><br>
+                            <span style="white-space: pre">    </span>println(Input.readLine().split(<span class="string">" "</span>).size())<br>
                             }
                         </div>
 
@@ -513,14 +513,14 @@
 
                         <div class="code">
                             <span class="keyword">function</span> <span class="function">main</span>() {<br>
-                            <span style="white-space: pre">    println(factorial(Input.readInt()))</span><br>
+                            <span style="white-space: pre">    </span>println(factorial(Input.readInt()))<br>
                             }<br>
                             <br>
                             <span class="keyword">function</span> <span class="function">factorial</span>(<span class="keyword">var</span> <span class="variable">a</span>:Int):Int {<br>
-                            <span style="white-space: pre">    <span class="keyword">if</span> (<span class="variable">a</span> > <span class="number">1</span>) {</span><br>
-                            <span style="white-space: pre">        <span class="keyword">return</span> factorial(<span class="variable">a</span> - <span class="number">1</span>) * <span class="variable">a</span></span><br>
-                            <span style="white-space: pre">    }</span><br>
-                            <span style="white-space: pre">    <span class="keyword">return</span> <span class="number">1</span></span><br>
+                            <span style="white-space: pre">    </span><span class="keyword">if</span> (<span class="variable">a</span> > <span class="number">1</span>) {<br>
+                            <span style="white-space: pre">        </span><span class="keyword">return</span> factorial(<span class="variable">a</span> - <span class="number">1</span>) * <span class="variable">a</span><br>
+                            <span style="white-space: pre">    </span>}<br>
+                            <span style="white-space: pre">    </span><span class="keyword">return</span> <span class="number">1</span><br>
                             }
                         </div>
 
@@ -528,7 +528,7 @@
 
                         <div class="code">
                             <span class="keyword">function</span> <span class="function">main</span>() {<br>
-                            <span style="white-space: pre">    println(Math.factorial(Input.readInt()))</span><br>
+                            <span style="white-space: pre">    </span>println(Math.factorial(Input.readInt()))<br>
                             }
                         </div>
 
